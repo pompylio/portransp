@@ -1,0 +1,15 @@
+Package: portransp
+Type: Package
+Title: Download of open data from the "Portal da Transparencia"
+Version: 0.0.0.9000
+Author: Pompylio Jeronimo de Lima
+Maintainer: Pompylio Jeronimo de Lima <pompylio.lima@gmail.com>
+Description: Open data from the federal government of Brazil is available on the 
+    "Portal da Transparencia" <http://portaltransparencia.gov.br/>. This package
+    facilitates downloading and processing of this data.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+
+Imports:
+    RCurl
