@@ -4,10 +4,10 @@ portal <- data.frame(
   opendata = c("orcamento-despesa", "despesas", "despesas-execucao",
     "transferencias", "cpgf", "cpcc", "cpdc", "receitas", "licitacoes",
     "compras", "convenios", "bolsa-familia-pagamentos", "bolsa-familia-saques",
-    "garantia-safra", "seguro-defeso", "peti", "servidores", "servidores",
+    "garantia-safra", "seguro-defeso", "peti", "servidores_civis", "servidores_militares",
     "ceaf", "dirigentes", "ceis", "cepim", "cnep", "viagens",
-    "imoveis-funcionais", "imoveis-funcionais", "imoveis-funcionais",
-    "imoveis-funcionais"),
+    "imoveis-funcionais_mre", "imoveis-funcionais_spu", "imoveis-funcionais_md",
+    "imoveis-funcionais_pr"),
   detail = c('','','','','','','','','','','','','','','','','Servidores',
     'Militares','','','','','','','MRE','SPU','MD','PR'),
   reference = c("yyyy", "yyyymmdd", "yyyymm", "yyyymm", "yyyymm", "yyyymm",
@@ -16,7 +16,3 @@ portal <- data.frame(
     "yyyymmdd", "yyyymmdd", "yyyymmdd", "yyyy", "yyyymmdd", "yyyymmdd",
     "yyyymmdd", "yyyymmdd"),
   stringsAsFactors = FALSE)
-
-
-save(portal,file = "data/pkgdata.rda")
-
