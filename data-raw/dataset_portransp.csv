@@ -1,0 +1,29 @@
+id;group;item;subitem;dataset;update;formatdate;by
+1;Beneficios ao Cidadao;Bolsa familia pagamentos;;bolsa-familia-pagamentos;month;yyyymm;month
+2;Beneficios ao Cidadao;Bolsa familia saques;;bolsa-familia-saques;month;yyyymm;month
+3;Beneficios ao Cidadao;Erradicacao do trabalho infantil PETI;;peti;month;yyyymm;month
+4;Beneficios ao Cidadao;Garantia safra;;garantia-safra;month;yyyymm;month
+5;Beneficios ao Cidadao;Seguro defeso pescador artesanal;;seguro-defeso;month;yyyymm;month
+6;Cartao Pagamento;Cartao pagamento compras centralizadas;;cpcc;month;yyyymm;month
+7;Cartao Pagamento;Cartao pagamento da defesa civil CPDC;;cpdc;month;yyyymm;month
+8;Cartao Pagamento;Cartao pagamento governo federal CPGF;;cpgf;month;yyyymm;month
+9;Convenios e Instrumentos Congeneres;Convenios;;convenios;week;yyyymmdd;day
+10;Despesas Publicas;Documentos empenho, liquidacao e pagamento;;despesas;day;yyyymmdd;day
+11;Despesas Publicas;Execucao da despesa;;despesas-execucao;day;yyyymm;month
+12;Despesas Publicas;Recursos transferidos;;transferencias;day;yyyymm;month
+13;Imoveis funcionais;Imoveis funcionais;MD;imoveis-funcionais_md;on_demand;yyyymmdd;day
+14;Imoveis funcionais;Imoveis funcionais;MRE;imoveis-funcionais_mre;on_demand;yyyymmdd;day
+15;Imoveis funcionais;Imoveis funcionais;PR;imoveis-funcionais_pr;on_demand;yyyymmdd;day
+16;Imoveis funcionais;Imoveis funcionais;SPU;imoveis-funcionais_spu;on_demand;yyyymmdd;day
+17;Licitacoes e Contratos;Contratacoes;;compras;month;yyyymm;month
+18;Licitacoes e Contratos;Licitacoes;;licitacoes;month;yyyymm;month
+19;Orcamento Publico;Orcamento da despesa;;orcamento-despesa;day;yyyy;year
+20;Receitas Publicas;Execucao da receita;;receitas;day;yyyy;year
+21;Sancoes;Empresas inidoneas e suspensas;;ceis;four_hours;yyyymmdd;day
+22;Sancoes;Empresas punidas;;cnep;four_hours;yyyymmdd;day
+23;Sancoes;Entidades sem fins lucrativos impedidas;;cepim;day;yyyymmdd;day
+24;Servidores;Cadastro de expulsoes da administracao federal CEAF;;ceaf;week;yyyymmdd;day
+25;Servidores;Dirigentes de empresas;;dirigentes;on_demand;yyyymm;month
+26;Servidores;Servidores civis do executivo federal;Servidores;servidores_civis;month;yyyymm;month
+27;Servidores;Servidores militares do executivo federal;Militares;servidores_militares;month;yyyymm;month
+28;Viagens a servico;Viagens a servico;;viagens;day;yyyy;year
