@@ -84,9 +84,14 @@ potr_download <- function(opendata, reference, destfile, filename, ...) {
   else stop("Valid input to 'opendata' and 'reference': ", potrms, call. = FALSE)
   if (!nchar(reference) == nchar(potrdt$formatdate))
     stop("Valid input to 'opendata' and 'reference': ", potrms, call. = FALSE)
-  if (missing(filename)) filename <- potrdt$dataset
+  if (missing(filename)) filename <- paste0(potrdt$dataset, "-", reference, ".zip")
+  else if (!grepl(pattern = ".zip", x = filename))
+    filename <- paste0(filename,".zip")
   if (missing(destfile)) destfile <- filename
-  else destfile <- paste0(destfile,"/",filename)
+  else
+    if (grepl("/", substr(destfile, nchar(destfile), nchar(destfile))))
+         destfile <- paste0(destfile, filename)
+    else destfile <- paste0(destfile, "/", filename)
   potrurl <- paste0(
     potrurl,
     unlist(strsplit(potrdt$dataset, split = "_"))[1],
@@ -96,4 +101,6 @@ potr_download <- function(opendata, reference, destfile, filename, ...) {
     )
   formals(download.file)$mode = "wb"
   download.file(url = potrurl, destfile = destfile, ...)
+  invisible(destfile)
 }
+
