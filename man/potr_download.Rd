@@ -2,9 +2,10 @@
 % Please edit documentation in R/potr_download.R
 \name{potr_download}
 \alias{potr_download}
-\title{Download files of the 'Portal da Transparência'}
+\title{Download files of the 'Portal da Transparencia'}
 \usage{
-potr_download(opendata, reference, destfile, filename, ...)
+potr_download(opendata, reference, destfile, filename, download.file.mode,
+  ...)
 }
 \arguments{
 \item{opendata}{A character or numeric thats indicates a dataset selected for download.
@@ -20,10 +21,13 @@ If missing, the file will be saved to the current directory.}
 \item{filename}{File name to dataset. For all dataset defined by 'opendata' use the
 extension '.zip' to the end. If missing, the file name will be a title of opendata with a reference.}
 
+\item{download.file.mode}{The mode with which to write the file. If download.file.mode is not found
+and the operating system is windows, it will use the "wb".}
+
 \item{...}{Others arguments of the \code{\link[utils:download.file]{download.file}} function.}
 }
 \description{
-This function can be used to download a dataset from the 'Portal da Transparência'
+This function can be used to download a dataset from the 'Portal da Transparencia'
 of Brazil - \url{http://www.portaltransparencia.gov.br}.
 }
 \details{

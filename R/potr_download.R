@@ -1,6 +1,6 @@
-#' Download files of the 'Portal da Transparência'
+#' Download files of the 'Portal da Transparencia'
 #'
-#' This function can be used to download a dataset from the 'Portal da Transparência'
+#' This function can be used to download a dataset from the 'Portal da Transparencia'
 #' of Brazil - \url{http://www.portaltransparencia.gov.br}.
 #'
 #' @param opendata A character or numeric thats indicates a dataset selected for download.
@@ -12,6 +12,8 @@
 #' If missing, the file will be saved to the current directory.
 #' @param filename File name to dataset. For all dataset defined by 'opendata' use the
 #' extension '.zip' to the end. If missing, the file name will be a title of opendata with a reference.
+#' @param download.file.mode  The mode with which to write the file. If download.file.mode is not found
+#' and the operating system is windows, it will use the "wb".
 #' @param ... Others arguments of the \code{\link[utils:download.file]{download.file}} function.
 #'
 #' @details
@@ -74,7 +76,8 @@
 #' potr_download(opendata = "orcamento-despesa", reference = "2018")
 #' potr_download(opendata = "orcamento-despesa", reference = 2018, destfile = "~/data")
 #' potr_download(opendata = "orcamento-despesa", reference = 2018, destfile = "~/data", filename = "orcamento.zip")
-potr_download <- function(opendata, reference, destfile, filename, ...) {
+#' @export
+potr_download <- function(opendata, reference, destfile, filename, download.file.mode, ...) {
   if (missing(opendata) || missing(reference))
     stop("Valid input to 'opendata' and 'reference': ", potrms, call. = FALSE)
   if (any(opendata == potrdt$dataset))
@@ -99,8 +102,9 @@ potr_download <- function(opendata, reference, destfile, filename, ...) {
     reference,
     ifelse(potrdt$subitem == "", "", paste0("_", potrdt$subitem))
     )
-  formals(download.file)$mode = "wb"
-  download.file(url = potrurl, destfile = destfile, ...)
-  invisible(destfile)
+  if (missing(download.file.mode) && Sys.info()["sysname"] == "Windows"){
+    download.file.mode <- "wb"
+  }
+  download.file(url = potrurl, destfile = destfile, mode = download.file.mode, ...)
 }
 

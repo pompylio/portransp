@@ -1,4 +1,4 @@
-#' Download the last files of the 'Portal da Transparencia'
+#' Download the all files of the 'Portal da Transparencia'
 #'
 #' This function can be used to download the latest data set from the 'Transparency Portal'
 #' of Brazil - \url{http://www.portaltransparencia.gov.br}.
@@ -64,17 +64,17 @@
 #' }
 #'
 #' @examples
-#' potr_download_last(opendata = 19)
-#' potr_download_last(opendata = 19, destfile = "~/data")
-#' potr_download_last(opendata = 19, destfile = "~/data", filename = "orcamento.zip")
-#' potr_download_last(opendata = "19")
-#' potr_download_last(opendata = "19", destfile = "~/data")
-#' potr_download_last(opendata = "19", destfile = "~/data", filename = "orcamento.zip")
-#' potr_download_last(opendata = "orcamento-despesa")
-#' potr_download_last(opendata = "orcamento-despesa", destfile = "~/data")
-#' potr_download_last(opendata = "orcamento-despesa", destfile = "~/data", filename = "orcamento.zip")
+#' potr_download_all(opendata = 19)
+#' potr_download_all(opendata = 19, destfile = "~/data")
+#' potr_download_all(opendata = 19, destfile = "~/data", filename = "orcamento.zip")
+#' potr_download_all(opendata = "19")
+#' potr_download_all(opendata = "19", destfile = "~/data")
+#' potr_download_all(opendata = "19", destfile = "~/data", filename = "orcamento.zip")
+#' potr_download_all(opendata = "orcamento-despesa")
+#' potr_download_all(opendata = "orcamento-despesa", destfile = "~/data")
+#' potr_download_all(opendata = "orcamento-despesa", destfile = "~/data", filename = "orcamento.zip")
 #' @export
-potr_download_last <- function(opendata, destfile, filename, download.file.mode, ...) {
+potr_download_all <- function(opendata, destfile, filename, download.file.mode, ...) {
   if (missing(opendata))
     stop("Valid input to 'opendata' and 'reference': ", potrms, call. = FALSE)
   if (any(opendata == potrdt$opendata))
@@ -94,7 +94,7 @@ potr_download_last <- function(opendata, destfile, filename, download.file.mode,
   if (missing(download.file.mode) && Sys.info()["sysname"] == "Windows"){
     download.file.mode <- "wb"
   }
-  while (file.exists(file_dl) == FALSE | i == 0) {
+  while (!i == 0) {
     link <- paste0(potrurl, opendata, "/", reference[i], subitem)
     file_dl <- paste0(destfile, "-", reference[i], ".zip")
     try(download.file(url = link, destfile = file_dl, mode = download.file.mode, ...), silent = TRUE)
