@@ -59,6 +59,8 @@ potr_download_last <- function(opendata, destfile, filename, download.file.mode,
   file_dl <- paste0(destfile, "-", reference[i], ".zip")
   if (missing(download.file.mode) && Sys.info()["sysname"] == "Windows"){
     download.file.mode <- "wb"
+  } else {
+    download.file.mode <- "w"
   }
   while (file.exists(file_dl) == FALSE | i == 0) {
     link <- paste0(potrurl, opendata, "/", reference[i], subitem)

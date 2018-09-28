@@ -12,6 +12,7 @@ potr_structure_zip <- function(zipfile){
     file_select <- paste0(tempdir,"/",output$list_files$Name[i])
     db <- read.csv2(
       file = file_select,
+      check.names = FALSE,
       header = TRUE,
       nrows = 1)
     output$list_files$Ncol[i] <- ncol(db)
