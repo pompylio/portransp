@@ -40,40 +40,6 @@ Other '...' arguments are related to the download.file function of the 'utils' p
 It is suggested that the values for '...' be reported only if the default setting
 does not work. See \code{\link[utils:download.file]{download.file}} for more
 information about these arguments and proxy settings.
-
-These are valid options for 'opendata' and 'reference' arguments:
-
-\tabular{lllll}{
-id \tab description                                         \tab opendata                 \tab reference format\cr
-1  \tab Bolsa familia pagamentos                            \tab bolsa-familia-pagamentos \tab yyyymm          \cr
-2  \tab Bolsa familia saques                                \tab bolsa-familia-saques     \tab yyyymm          \cr
-3  \tab Erradicacao do trabalho infantil PETI               \tab peti                     \tab yyyymm          \cr
-4  \tab Garantia safra                                      \tab garantia-safra           \tab yyyymm          \cr
-5  \tab Seguro defeso pescador artesanal                    \tab seguro-defeso            \tab yyyymm          \cr
-6  \tab Cartao pagamento compras centralizadas              \tab cpcc                     \tab yyyymm          \cr
-7  \tab Cartao pagamento da defesa civil CPDC               \tab cpdc                     \tab yyyymm          \cr
-8  \tab Cartao pagamento governo federal CPGF               \tab cpgf                     \tab yyyymm          \cr
-9  \tab Convenios                                           \tab convenios                \tab yyyymmdd        \cr
-10 \tab Documentos empenho, liquidacao e pagamento          \tab despesas                 \tab yyyymmdd        \cr
-11 \tab Execucao da despesa                                 \tab despesas-execucao        \tab yyyymm          \cr
-12 \tab Recursos transferidos                               \tab transferencias           \tab yyyymm          \cr
-13 \tab Imoveis funcionais                                  \tab imoveis-funcionais_md    \tab yyyymmdd        \cr
-14 \tab Imoveis funcionais                                  \tab imoveis-funcionais_mre   \tab yyyymmdd        \cr
-15 \tab Imoveis funcionais                                  \tab imoveis-funcionais_pr    \tab yyyymmdd        \cr
-16 \tab Imoveis funcionais                                  \tab imoveis-funcionais_spu   \tab yyyymmdd        \cr
-17 \tab Contratacoes                                        \tab compras                  \tab yyyymm          \cr
-18 \tab Licitacoes                                          \tab licitacoes               \tab yyyymm          \cr
-19 \tab Orcamento da despesa                                \tab orcamento-despesa        \tab yyyy            \cr
-20 \tab Execucao da receita                                 \tab receitas                 \tab yyyy            \cr
-21 \tab Empresas inidoneas e suspensas                      \tab ceis                     \tab yyyymmdd        \cr
-22 \tab Empresas punidas                                    \tab cnep                     \tab yyyymmdd        \cr
-23 \tab Entidades sem fins lucrativos impedidas             \tab cepim                    \tab yyyymmdd        \cr
-24 \tab Cadastro de expulsoes da administracao federal CEAF \tab ceaf                     \tab yyyymmdd        \cr
-25 \tab Dirigentes de empresas                              \tab dirigentes               \tab yyyymm          \cr
-26 \tab Servidores civis do executivo federal               \tab servidores_civis         \tab yyyymm          \cr
-27 \tab Servidores militares do executivo federal           \tab servidores_militares     \tab yyyymm          \cr
-28 \tab Viagens a servico                                   \tab viagens                  \tab yyyy
-}
 }
 \examples{
 potr_download_last(opendata = 19)

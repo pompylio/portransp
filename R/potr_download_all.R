@@ -77,7 +77,7 @@
 potr_download_all <- function(opendata, destfile, filename, download.file.mode, ...) {
   if (missing(opendata))
     stop("Valid input to 'opendata' and 'reference': ", potrms, call. = FALSE)
-  if (any(opendata == potrdt$opendata))
+  if (any(opendata == potrdt$dataset))
     potrdt <- potrdt[which(potrdt$dataset == opendata), ]
   else if (any(as.character(opendata) == potrdt$id))
     potrdt <- potrdt[potrdt$id == as.numeric(opendata), ]

@@ -1,5 +1,5 @@
 potrdt <- readr::read_delim("data-raw/dataset_portransp.csv",
-                     ";", escape_double = FALSE, col_types = cols(id = col_character()),
+                     ";", escape_double = FALSE, col_types = readr::cols(id = readr::col_character()),
                      na = "null", trim_ws = TRUE)
 potrms <-
   paste0(
