@@ -90,14 +90,15 @@ potr_download_all <- function(opendata, destfile, filename, download.file.mode, 
   if (missing(destfile)) destfile <- filename
   else destfile <- paste0(destfile,"/",filename)
   i = length(reference)
-  file_dl <- paste0(destfile, "-", reference[i], ".zip")
+  file_dl <- paste0(destfile, "_", reference[i], ".zip")
   if (missing(download.file.mode) && Sys.info()["sysname"] == "Windows"){
     download.file.mode <- "wb"
   }
   while (!i == 0) {
     link <- paste0(potrurl, opendata, "/", reference[i], subitem)
-    file_dl <- paste0(destfile, "-", reference[i], ".zip")
+    file_dl <- paste0(destfile, "_", reference[i], ".zip")
     try(download.file(url = link, destfile = file_dl, mode = download.file.mode, ...), silent = TRUE)
     i <- i - 1
-    }
+  }
+  invisible(link)
 }
