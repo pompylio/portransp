@@ -43,33 +43,33 @@ potr_download_last(opendata = "despesas", destfile = "~/", filename = "despesas_
 ```
 Valid options for 'opendata' and 'reference' arguments:
 
-|description                                         |opendata                 |reference       |
-|----------------------------------------------------|-------------------------|----------------|
-|Bolsa familia pagamentos                            |bolsa-familia-pagamentos |yyyymm          |
-|Bolsa familia saques                                |bolsa-familia-saques     |yyyymm          |
-|Erradicacao do trabalho infantil PETI               |peti                     |yyyymm          |
-|Garantia safra                                      |garantia-safra           |yyyymm          |
-|Seguro defeso pescador artesanal                    |seguro-defeso            |yyyymm          |
-|Cartao pagamento compras centralizadas              |cpcc                     |yyyymm          |
-|Cartao pagamento da defesa civil CPDC               |cpdc                     |yyyymm          |
-|Cartao pagamento governo federal CPGF               |cpgf                     |yyyymm          |
-|Convenios                                           |convenios                |yyyymmdd        |
-|Documentos empenho, liquidacao e pagamento          |despesas                 |yyyymmdd        |
-|Execucao da despesa                                 |despesas-execucao        |yyyymm          |
-|Recursos transferidos                               |transferencias           |yyyymm          |
-|Imoveis funcionais                                  |imoveis-funcionais_md    |yyyymmdd        |
-|Imoveis funcionais                                  |imoveis-funcionais_mre   |yyyymmdd        |
-|Imoveis funcionais                                  |imoveis-funcionais_pr    |yyyymmdd        |
-|Imoveis funcionais                                  |imoveis-funcionais_spu   |yyyymmdd        |
-|Contratacoes                                        |compras                  |yyyymm          |
-|Licitacoes                                          |licitacoes               |yyyymm          |
-|Orcamento da despesa                                |orcamento-despesa        |yyyy            |
-|Execucao da receita                                 |receitas                 |yyyy            |
-|Empresas inidoneas e suspensas                      |ceis                     |yyyymmdd        |
-|Empresas punidas                                    |cnep                     |yyyymmdd        |
-|Entidades sem fins lucrativos impedidas             |cepim                    |yyyymmdd        |
-|Cadastro de expulsoes da administracao federal CEAF |ceaf                     |yyyymmdd        |
-|Dirigentes de empresas                              |dirigentes               |yyyymm          |
-|Servidores civis do executivo federal               |servidores_civis         |yyyymm          |
-|Servidores militares do executivo federal           |servidores_militares     |yyyymm          |
-|Viagens a servico                                   |viagens                  |yyyy            |
+|description                                         |id|opendata                 |reference       |
+|----------------------------------------------------|--|-------------------------|----------------|
+|Bolsa familia pagamentos                            |1 |bolsa-familia-pagamentos |yyyymm          |
+|Bolsa familia saques                                |2 |bolsa-familia-saques     |yyyymm          |
+|Erradicacao do trabalho infantil PETI               |3 |peti                     |yyyymm          |
+|Garantia safra                                      |4 |garantia-safra           |yyyymm          |
+|Seguro defeso pescador artesanal                    |5 |seguro-defeso            |yyyymm          |
+|Cartao pagamento compras centralizadas              |6 |cpcc                     |yyyymm          |
+|Cartao pagamento da defesa civil CPDC               |7 |cpdc                     |yyyymm          |
+|Cartao pagamento governo federal CPGF               |8 |cpgf                     |yyyymm          |
+|Convenios                                           |9 |convenios                |yyyymmdd        |
+|Documentos empenho, liquidacao e pagamento          |10|despesas                 |yyyymmdd        |
+|Execucao da despesa                                 |11|despesas-execucao        |yyyymm          |
+|Recursos transferidos                               |12|transferencias           |yyyymm          |
+|Imoveis funcionais                                  |13|imoveis-funcionais_md    |yyyymmdd        |
+|Imoveis funcionais                                  |14|imoveis-funcionais_mre   |yyyymmdd        |
+|Imoveis funcionais                                  |15|imoveis-funcionais_pr    |yyyymmdd        |
+|Imoveis funcionais                                  |16|imoveis-funcionais_spu   |yyyymmdd        |
+|Contratacoes                                        |17|compras                  |yyyymm          |
+|Licitacoes                                          |18|licitacoes               |yyyymm          |
+|Orcamento da despesa                                |19|orcamento-despesa        |yyyy            |
+|Execucao da receita                                 |20|receitas                 |yyyy            |
+|Empresas inidoneas e suspensas                      |21|ceis                     |yyyymmdd        |
+|Empresas punidas                                    |22|cnep                     |yyyymmdd        |
+|Entidades sem fins lucrativos impedidas             |23|cepim                    |yyyymmdd        |
+|Cadastro de expulsoes da administracao federal CEAF |24|ceaf                     |yyyymmdd        |
+|Dirigentes de empresas                              |25|dirigentes               |yyyymm          |
+|Servidores civis do executivo federal               |26|servidores_civis         |yyyymm          |
+|Servidores militares do executivo federal           |27|servidores_militares     |yyyymm          |
+|Viagens a servico                                   |28|viagens                  |yyyy            |
