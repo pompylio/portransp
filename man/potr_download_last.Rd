@@ -4,7 +4,8 @@
 \alias{potr_download_last}
 \title{Download the last files of the 'Portal da Transparencia'}
 \usage{
-potr_download_last(opendata, destfile, filename, download.file.mode, ...)
+potr_download_last(opendata, destfile, filename, numref_ignore,
+  download.file.mode, ...)
 }
 \arguments{
 \item{opendata}{A character or numeric that indicates a dataset selected for download.
@@ -15,6 +16,9 @@ If missing, the file will be saved to the current directory.}
 
 \item{filename}{File name to dataset. By default, the file name is the title of 'opendata'
 with the 'reference' and '.zip' extension.}
+
+\item{numref_ignore}{Intenger or numeric. Number of references that will not be considered
+from the last file that will be downloaded.}
 
 \item{download.file.mode}{The mode with which to write the file. If download.file.mode
 is not found and the operating system is windows, it will use the "wb".}
@@ -84,4 +88,5 @@ potr_download_last(opendata = "19", destfile = "~/", filename = "orcamento")
 potr_download_last(opendata = "orcamento-despesa")
 potr_download_last(opendata = "orcamento-despesa", destfile = "~/")
 potr_download_last(opendata = "orcamento-despesa", destfile = "~/", filename = "orcamento")
+potr_download_last(opendata = "orcamento-despesa", destfile = "~/", numref_ignore = 1)
 }
