@@ -4,7 +4,7 @@
 \alias{potr_structure_zip}
 \title{Zip file structure}
 \usage{
-potr_structure_zip(zipfile)
+potr_structure_zip(zipfile, csvencoding, ...)
 }
 \description{
 Zip file structure

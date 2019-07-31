@@ -1,7 +1,8 @@
 #' Zip file structure
 #' @export
-potr_structure_zip <- function(zipfile){
+potr_structure_zip <- function(zipfile, csvencoding,...){
   if (missing(zipfile)) stop("missing zipfile")
+  if (missing(csvencoding)) csvencoding <- "Latin1"
   tempdir <- tempdir()
   output <- list(list_files = unzip(zipfile = zipfile, list = TRUE))
   output$list_files$Ncol <- 0
@@ -14,9 +15,12 @@ potr_structure_zip <- function(zipfile){
       file = file_select,
       check.names = FALSE,
       header = TRUE,
-      nrows = 1)
+      nrows = 1,
+      fileEncoding = csvencoding,
+      ...)
     output$list_files$Ncol[i] <- ncol(db)
-    output$list_files$Nrow[i] <- nrow(data.table::fread(file_select, sep = ";", quote = "\"", select = 1L))
+    output$list_files$Nrow[i] <- nrow(data.table::fread(file_select, sep = ";",
+      quote = "\"", select = 1L, encoding = csvencoding))
     db <- list(names(db))
     names(db) <- output$list_files$Name[i]
     dt <- append(dt, db)
