@@ -20,7 +20,7 @@ potr_structure_zip <- function(zipfile, csvencoding,...){
       ...)
     output$list_files$Ncol[i] <- ncol(db)
     output$list_files$Nrow[i] <- nrow(data.table::fread(file_select, sep = ";",
-      quote = "\"", select = 1L, encoding = csvencoding))
+      quote = "\"", select = 1L))
     db <- list(names(db))
     names(db) <- output$list_files$Name[i]
     dt <- append(dt, db)
