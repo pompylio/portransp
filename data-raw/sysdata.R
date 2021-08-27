@@ -4,9 +4,10 @@ potrdt <- readr::read_delim("data-raw/dataset_portransp.csv",
 potrms <-
   paste0(
     paste0("(", potrdt$id, " or "),
-    paste0(potrdt$dataset,""),
+    paste0(potrdt$idname,""),
     paste0(", ", potrdt$formatdate,")"),
     collapse = " "
   )
 potrurl <- "http://www.portaltransparencia.gov.br/download-de-dados/"
-devtools::use_data(potrdt,potrms,potrurl,internal = TRUE,overwrite = TRUE)
+usethis::use_data(potrdt,potrms,potrurl,internal = TRUE,overwrite = TRUE)
+

@@ -4,7 +4,7 @@
 \alias{potr_download_all}
 \title{Download files of the 'Portal da Transparencia'}
 \usage{
-potr_download_all(opendata, destfile, filename, download.file.mode, ...)
+potr_download_all(opendata, destfile, filename, limited_to, ...)
 }
 \arguments{
 \item{opendata}{A character or numeric that indicates a dataset selected for download.
@@ -15,9 +15,6 @@ If missing, the file will be saved to the current directory.}
 
 \item{filename}{File name to dataset. By default, the file name is the title of 'opendata'
 with the 'reference' and '.zip' extension.}
-
-\item{download.file.mode}{The mode with which to write the file. If download.file.mode
-is not found and the operating system is windows, it will use the "wb".}
 
 \item{...}{Others arguments of the \code{\link[utils:download.file]{download.file}} function.}
 }
@@ -43,45 +40,51 @@ information about these arguments and proxy settings.
 Valid options for 'opendata' argument:
 
 \tabular{lllll}{
-id \tab description                                         \tab opendata                 \cr
-1  \tab Bolsa familia pagamentos                            \tab bolsa-familia-pagamentos \cr
-2  \tab Bolsa familia saques                                \tab bolsa-familia-saques     \cr
-3  \tab Erradicacao do trabalho infantil PETI               \tab peti                     \cr
-4  \tab Garantia safra                                      \tab garantia-safra           \cr
-5  \tab Seguro defeso pescador artesanal                    \tab seguro-defeso            \cr
-6  \tab Cartao pagamento compras centralizadas              \tab cpcc                     \cr
-7  \tab Cartao pagamento da defesa civil CPDC               \tab cpdc                     \cr
-8  \tab Cartao pagamento governo federal CPGF               \tab cpgf                     \cr
-9  \tab Convenios                                           \tab convenios                \cr
-10 \tab Documentos empenho, liquidacao e pagamento          \tab despesas                 \cr
-11 \tab Execucao da despesa                                 \tab despesas-execucao        \cr
-12 \tab Recursos transferidos                               \tab transferencias           \cr
-13 \tab Imoveis funcionais                                  \tab imoveis-funcionais_md    \cr
-14 \tab Imoveis funcionais                                  \tab imoveis-funcionais_mre   \cr
-15 \tab Imoveis funcionais                                  \tab imoveis-funcionais_pr    \cr
-16 \tab Imoveis funcionais                                  \tab imoveis-funcionais_spu   \cr
-17 \tab Contratacoes                                        \tab compras                  \cr
-18 \tab Licitacoes                                          \tab licitacoes               \cr
-19 \tab Orcamento da despesa                                \tab orcamento-despesa        \cr
-20 \tab Execucao da receita                                 \tab receitas                 \cr
-21 \tab Empresas inidoneas e suspensas                      \tab ceis                     \cr
-22 \tab Empresas punidas                                    \tab cnep                     \cr
-23 \tab Entidades sem fins lucrativos impedidas             \tab cepim                    \cr
-24 \tab Cadastro de expulsoes da administracao federal CEAF \tab ceaf                     \cr
-25 \tab Dirigentes de empresas                              \tab dirigentes               \cr
-26 \tab Servidores civis do executivo federal               \tab servidores_civis         \cr
-27 \tab Servidores militares do executivo federal           \tab servidores_militares     \cr
-28 \tab Viagens a servico                                   \tab viagens
+#' id \tab description  \tab opendata  \tab formatdate  \cr
+1 \tab Auxilio Emergencial  \tab auxilio-emergencial \tab yyyymm \cr
+2 \tab Bolsa familia pagamentos  \tab bolsa-familia-pagamentos \tab yyyymm \cr
+3 \tab Bolsa familia saques  \tab bolsa-familia-saques \tab yyyymm \cr
+4 \tab Benefício de Prestação Continuada  \tab bpc \tab yyyymm \cr
+5 \tab Garantia safra  \tab garantia-safra \tab yyyymm \cr
+6 \tab Erradicacao do trabalho infantil PETI  \tab peti \tab yyyymm \cr
+7 \tab Seguro defeso pescador artesanal  \tab seguro-defeso \tab yyyymm \cr
+8 \tab Cartao pagamento compras centralizadas  \tab cpcc \tab yyyymm \cr
+9 \tab Cartao pagamento da defesa civil CPDC  \tab cpdc \tab yyyymm \cr
+10 \tab Cartao pagamento governo federal CPGF  \tab cpgf \tab yyyymm \cr
+11 \tab Favorecidos PJ  \tab favorecidos-pj \tab yyyymm \cr
+12 \tab Convenios  \tab convenios \tab yyyymmdd \cr
+13 \tab Documentos empenho, liquidacao e pagamento  \tab despesas \tab yyyymmdd \cr
+14 \tab Execucao da despesa  \tab despesas-execucao \tab yyyymm \cr
+15 \tab Recursos transferidos  \tab transferencias \tab yyyymm \cr
+16 \tab Recebimento de recursos por favorecido  \tab despesas-favorecidos \tab yyyymm \cr
+17 \tab Emendas parlamentares  \tab emendas-parlamentares \tab UNICO \cr
+18 \tab Imoveis funcionais  \tab imoveis-funcionais-md \tab yyyymmdd \cr
+19 \tab Imoveis funcionais  \tab imoveis-funcionais-mre \tab yyyymmdd \cr
+20 \tab Imoveis funcionais  \tab imoveis-funcionais-pr \tab yyyymmdd \cr
+21 \tab Imoveis funcionais  \tab imoveis-funcionais-spu \tab yyyymmdd \cr
+22 \tab Contratacoes  \tab compras \tab yyyymm \cr
+23 \tab Licitacoes  \tab licitacoes \tab yyyymm \cr
+24 \tab Orcamento da despesa  \tab orcamento-despesa \tab yyyy \cr
+25 \tab Execucao da receita  \tab receitas \tab yyyy \cr
+26 \tab Empresas inidoneas e suspensas  \tab ceis \tab yyyymmdd \cr
+27 \tab Entidades sem fins lucrativos impedidas  \tab cepim \tab yyyymmdd \cr
+28 \tab Empresas punidas  \tab cnep \tab yyyymmdd \cr
+29 \tab Acordos de Leniencia  \tab acordos-leniencia \tab yyyymmdd \cr
+30 \tab Servidores militares ate 2019  \tab servidores-militares \tab yyyymm \cr
+31 \tab Servidores civis ate 2019  \tab servidores-civis \tab yyyymm \cr
+32 \tab Cadastro de expulsoes da administracao federal CEAF  \tab ceaf \tab yyyymmdd \cr
+33 \tab Pessoas expostas politicamente  \tab pep \tab yyyymm \cr
+34 \tab Viagens a servico  \tab viagens \tab yyyy
 }
 }
 \examples{
-potr_download_all(opendata = 19)
-potr_download_all(opendata = 19, destfile = "~/")
-potr_download_all(opendata = 19, destfile = "~/", filename = "orcamento")
-potr_download_all(opendata = "19")
-potr_download_all(opendata = "19", destfile = "~/")
-potr_download_all(opendata = "19", destfile = "~/", filename = "orcamento")
-potr_download_all(opendata = "orcamento-despesa")
-potr_download_all(opendata = "orcamento-despesa", destfile = "~/")
-potr_download_all(opendata = "orcamento-despesa", destfile = "~/", filename = "orcamento")
+potr_download_all(opendata = 22, reference = 2021)
+potr_download_all(opendata = 22, reference = 2021, destfile = "~/")
+potr_download_all(opendata = 22, reference = 2021, destfile = "~/", filename = "compras")
+potr_download_all(opendata = "22", reference = "2021")
+potr_download_all(opendata = "22", reference = "2021", destfile = "~/")
+potr_download_all(opendata = "22", reference = "2021", destfile = "~/", filename = "compras")
+potr_download_all(opendata = "compras", reference = "2021")
+potr_download_all(opendata = "compras", reference = 2021, destfile = "~/")
+potr_download_all(opendata = "compras", reference = 2021, destfile = "~/", filename = "compras")
 }
